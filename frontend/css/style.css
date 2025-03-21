@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto Condensed", sans-serif;
+}
+
+:root {
+    font-size: 16px;
+}
+
+.header {
+    text-align: center;
+    background-color: #fca503;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 4px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.container {
+    width: 100%;
+    height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login {
+    border: 2px solid black;
+    width: 100%;
+    max-width: 320px;
+    background-color: #ffffff77;
+    /* border-radius: 12px; */
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.login > h2 {
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.login__form {
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.login__input {
+    border: 2px solid black;
+    padding: 12px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    outline: none;
+    /* border-radius: 12px; */
+}
+
+.login__input:focus {
+    outline: 2px solid #00000046;
+}
+
+.login__button {
+    border: 2px solid black;
+    padding: 12px;
+    /* border-radius: 12px; */
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+    color: black;
+}
+
+.login__button:hover {
+    background-color: white;
+}
+
+
+
+.chat {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    width: 100%;
+    height: 100%;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+
+    display: none;
+    
+}
+
+.chat__messages {
+    padding: 35px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.chat__form {
+    background-color: rgba(255, 255, 255, 0.418);
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.chat__input {
+    border: 2px solid black;
+    padding: 15px;
+    /* border-radius: 8px; */
+    flex-grow: 1;
+    outline: none;
+    font-size: 1rem;
+}
+
+.chat__button {
+    border: none;
+    background: none;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+}
+
+.chat__button > span {
+    font-size: 1.8rem;
+}
+
+.chat__messages > div {
+    padding: 8px;
+    width: 100%;
+    max-width: 1400rem;
+    font-weight: 500;
+    font-size: 0.9rem;
+    line-height: 24px;
+    margin-bottom: 9px;
+}
+
+.message--self {
+    background-color: rgb(255, 255, 255);
+    align-self: flex-end;
+}
+
+.message--other {
+    background-color: rgb(255, 255, 255);
+    align-self: flex-end;
+}
+
+.message--server {
+    background-color: rgb(255, 255, 255);
+    color: rgb(51, 51, 51);
+    align-self: flex-end;
+}
+
+.nickname {
+    color: rgb(0, 123, 194);
+}
+
+.server {
+    color: rgb(14, 14, 14);
+}
+
+.message--sender {
+    color: rgb(0, 146, 49);
+}
+
