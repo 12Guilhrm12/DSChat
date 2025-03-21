@@ -22,10 +22,9 @@ const user = { id: "", name: "", color: "" }
 
 let websocket
 
-
 const scrollScreen = () => {
     window.scrollTo({
-        top: document.body.scrollHeight - 100,
+        top: document.body.scrollHeight,
         behavior: "smooth"
     })
 }
@@ -106,8 +105,13 @@ const sendMessage = (event) => {
         content: chatInput.value
     }
 
-    websocket.send(JSON.stringify(message))
-
+    if (message.content.length < 250) {
+        websocket.send(JSON.stringify(message))
+    } else {
+        alert("Insira uma mensagem até 250 caractéres!")
+        
+    }
+    
     chatInput.value = ""
 }
 
@@ -118,16 +122,25 @@ const handleLogin = (event) => {
     user.name = loginInput.value
     user.color = getRandomColor()
 
-    login.style.display = "none"
-    chat.style.display = "flex"
+    if (user.name.length < 25) {
 
-    websocket = new WebSocket("wss://dschat-duhh.onrender.com")
+        login.style.display = "none"
+        chat.style.display = "flex"
 
-    const serverMessage = createMessageServerElement(`Olá, ${user.name}. Sejá bem-vindo ao DSChat!`)
-    chatMessages.appendChild(serverMessage)
-    scrollScreen()
+        websocket = new WebSocket("wss://dschat-duhh.onrender.com")
 
-    websocket.onmessage = processMessage
+        const serverMessageI = createMessageServerElement(`Olá, ${user.name}. Sejá bem-vindo ao DSChat!`)
+        const serverMessageII = createMessageServerElement(`O DSChat ainda está em desenvolvimento, espere por bugs!`)
+        const serverMessageIII = createMessageServerElement(`Passe o mouse sobre a parte inferior da tela para revelar a barra de texto...`)
+        chatMessages.appendChild(serverMessageI)
+        chatMessages.appendChild(serverMessageII)
+        chatMessages.appendChild(serverMessageIII)
+        scrollScreen()
+
+        websocket.onmessage = processMessage
+    } else {
+        alert("Insira um nome até 25 caractéres!")
+    }
 }
 
 
