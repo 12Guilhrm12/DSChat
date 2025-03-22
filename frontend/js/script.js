@@ -22,6 +22,11 @@ const user = { id: "", name: "", color: "" }
 
 let websocket
 
+function PlaySound() {
+    var sound = document.getElementById("not");
+    sound.play();
+}
+
 const scrollScreen = () => {
     window.scrollTo({
         top: document.body.scrollHeight,
@@ -54,6 +59,8 @@ const createMessageOtherElement = (content, sender, senderColor) => {
     span.style.color = senderColor
 
     div.appendChild(span)
+
+    PlaySound()
 
     span.innerHTML = sender + ": "
     div.innerHTML += content
