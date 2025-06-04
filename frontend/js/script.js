@@ -134,7 +134,7 @@ const handleLogin = (event) => {
         login.style.display = "none"
         chat.style.display = "flex"
 
-        websocket = new WebSocket("wss://dschat-1.onrender.com")
+        websocket = new WebSocket("wss://dschat-wss.onrender.com")
 
         const serverMessageI = createMessageServerElement(`Olá, ${user.name}. Sejá bem-vindo ao DSChat!`)
         const serverMessageII = createMessageServerElement(`O DSChat ainda está em desenvolvimento, espere por bugs!`)
